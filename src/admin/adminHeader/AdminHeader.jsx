@@ -5,7 +5,7 @@ const AdminHeader = () => {
         <>
             <div>
                 <Link
-                    to='/'
+                    to='/dashboard'
                     className="flex flex-row justify-center items-center my-1 md:flex md:flex-col"
                 >
                     <img src="/images/OIG.png" id="logo" alt="logo" className="bg-[#16cc95f3] rounded-full h-16 w-16 mr-2

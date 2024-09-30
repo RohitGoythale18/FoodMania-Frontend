@@ -9,7 +9,7 @@ const Footer = () => {
                         to='/'
                         className="flex justify-center items-center py-1"
                     >
-                        <img src="public/images/OIG.png" id="logo" alt="logo" className="bg-[#16cc95f3] rounded-full h-14 w-14 mr-2 md:h-20 md:w-20" />
+                        <img src="/images/OIG.png" id="logo" alt="logo" className="bg-[#16cc95f3] rounded-full h-14 w-14 mr-2 md:h-20 md:w-20" />
                         <span className="text-4xl text-[#16cc95f3] font-bold md:text-5xl">FoodMania</span>
                     </Link>
                 </div>
