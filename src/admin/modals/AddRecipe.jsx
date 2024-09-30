@@ -49,7 +49,7 @@ const AddRecipe = ({ open, onClose, recipeType }) => {
         formData.append('recipeImage', recipeImage);
 
         try {
-            const res = await axios.post(`http://localhost:3000/foodmania/recipe/add-${recipeType}`, formData, {
+            const res = await axios.post(`https://foodmania-backend-be6e.onrender.com/foodmania/recipe/add-${recipeType}`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },

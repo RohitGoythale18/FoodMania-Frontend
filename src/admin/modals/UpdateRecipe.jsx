@@ -68,7 +68,7 @@ const UpdateRecipe = ({ open, onClose, recipe, fetchRecipes, recipeType }) => {
         }
 
         try {
-            await axios.put(`http://localhost:3000/foodmania/recipe/update-${recipeType}/${recipe._id}`, formData, {
+            await axios.put(`https://foodmania-backend-be6e.onrender.com/foodmania/recipe/update-${recipeType}/${recipe._id}`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },

@@ -56,7 +56,7 @@ const ManageRecipes = ({ heading, recipeType }) => {
 
     const fetchRecipes = async () => {
         try {
-            const response = await axios.get(`http://localhost:3000/foodmania/recipe/get-${recipeType}-list`);
+            const response = await axios.get(`https://foodmania-backend-be6e.onrender.com/foodmania/recipe/get-${recipeType}-list`);
             setRecipes(response.data.data || []);
             setFilteredRecipe(response.data.data || []);
         } catch (error) {
@@ -82,7 +82,7 @@ const ManageRecipes = ({ heading, recipeType }) => {
     const deleteRecipe = async (recipe) => {
         try {
             console.log(`Deleting ${recipeType} with id: ${recipe._id}`);
-            await axios.delete(`http://localhost:3000/foodmania/recipe/delete-${recipeType}/${recipe._id}`);
+            await axios.delete(`https://foodmania-backend-be6e.onrender.com/foodmania/recipe/delete-${recipeType}/${recipe._id}`);
             fetchRecipes();
             setSnackbarMessage('Recipe deleted successfully!');
             handleClickSnackbar();

@@ -13,11 +13,11 @@ const OverView = () => {
 
     const fetchRecipes = async () => {
         try {
-            const sweetResponse = await axios.get('http://localhost:3000/foodmania/recipe/sweet-count');
-            const spiceResponse = await axios.get('http://localhost:3000/foodmania/recipe/spice-count');
-            const soupResponse = await axios.get('http://localhost:3000/foodmania/recipe/soup-count');
-            const nonvegResponse = await axios.get('http://localhost:3000/foodmania/recipe/nonveg-count');
-            const messageResponse = await axios.get('http://localhost:3000/foodmania/contact/message-count');
+            const sweetResponse = await axios.get('https://foodmania-backend-be6e.onrender.com/foodmania/recipe/sweet-count');
+            const spiceResponse = await axios.get('https://foodmania-backend-be6e.onrender.com/foodmania/recipe/spice-count');
+            const soupResponse = await axios.get('https://foodmania-backend-be6e.onrender.com/foodmania/recipe/soup-count');
+            const nonvegResponse = await axios.get('https://foodmania-backend-be6e.onrender.com/foodmania/recipe/nonveg-count');
+            const messageResponse = await axios.get('https://foodmania-backend-be6e.onrender.com/foodmania/contact/message-count');
 
             setTotalSweets(sweetResponse.data.data);
             setTotalSpices(spiceResponse.data.data);

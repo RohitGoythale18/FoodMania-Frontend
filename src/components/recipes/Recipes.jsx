@@ -42,7 +42,7 @@ const Recipes = ({ heading, recipeType }) => {
 
     const fetchRecipes = async () => {
         try {
-            const response = await axios.get(`http://localhost:3000/foodmania/recipe/get-${recipeType}-list`);
+            const response = await axios.get(`https://foodmania-backend-be6e.onrender.com/foodmania/recipe/get-${recipeType}-list`);
             const result = response.data;
             setRecipes(result.data || []);
             setFilteredRecipe(result.data || []);

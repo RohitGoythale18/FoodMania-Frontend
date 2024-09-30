@@ -20,7 +20,7 @@ const Contact = () => {
         const feedback = { userName, userEmail, userPhone, userMessage }
 
         try {
-            const res = await axios.post('http://localhost:3000/foodmania/contact/send-message', feedback, {
+            const res = await axios.post('https://foodmania-backend-be6e.onrender.com/foodmania/contact/send-message', feedback, {
                 headers: {
                     'Content-Type': 'application/json',
                 },

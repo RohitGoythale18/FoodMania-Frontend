@@ -35,7 +35,7 @@ const Feedback = ({heading}) => {
 
     const fetchMessages = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/foodmania/contact/get-message-list');
+            const response = await axios.get('https://foodmania-backend-be6e.onrender.com/foodmania/contact/get-message-list');
             const result = response.data;
             console.log(result);
             setMessage(result.data);
@@ -52,7 +52,7 @@ const Feedback = ({heading}) => {
     const deleteMessage = async (messageId) => {
         try {
             console.log(`Deleting message with id: ${messageId}`);
-            await axios.delete(`http://localhost:3000/foodmania/contact/delete-message/${messageId}`);
+            await axios.delete(`https://foodmania-backend-be6e.onrender.com/foodmania/contact/delete-message/${messageId}`);
             fetchMessages();
             setSnackbarMessage('Message deleted successfully!');
             handleClick();
