@@ -25,7 +25,7 @@ const Dashboard = () => {
                             to='/'
                             className="flex justify-center items-center py-1"
                         >
-                            <img src="public/images/OIG.png" id="logo" alt="logo" className="bg-[#16cc95f3] rounded-full h-14 w-14 mr-2" />
+                            <img src="/images/OIG.png" id="logo" alt="logo" className="bg-[#16cc95f3] rounded-full h-14 w-14 mr-2" />
                             <span className="text-[2.5rem] text-[#16cc95f3] font-bold">FoodMania</span>
                         </Link>
                     </div>

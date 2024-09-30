@@ -33,7 +33,7 @@ const Login = ({ setAuthenticated }) => {
     return (
         <div className="flex flex-col items-center py-12 md:grid grid-cols-2 gap-2 md:px-20 md:pt-24 justify-items-center">
             <div className="flex flex-col">
-                <img src="/public/images/OIG.png" alt="Foodmania Lo" className="px-20" />
+                <img src="/images/OIG.png" alt="Foodmania Lo" className="px-20" />
             </div>
             <div className="rounded-lg bg-slate-200 flex flex-col items-center w-[90%] py-5 px-3 my-5">
                 <form className="grid grid-cols-1 gap-4 justify-items-center w-full"

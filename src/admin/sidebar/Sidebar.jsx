@@ -28,7 +28,7 @@ const Sidebar = ({ open, setOpen }) => {
                 <div className="flex flex-col h-full">
                     <div className="mt-3 ml-2">
                         <Link to='/' className="flex items-center p-2">
-                            <img src="/public/images/OIG.png" id="logo" alt="logo" className="bg-[#16cc95f3] rounded-full h-16 w-16 mr-2" />
+                            <img src="/images/OIG.png" id="logo" alt="logo" className="bg-[#16cc95f3] rounded-full h-16 w-16 mr-2" />
                             <span className="text-4xl text-[#16cc95f3] font-bold">FoodMania</span>
                         </Link>
                     </div>
