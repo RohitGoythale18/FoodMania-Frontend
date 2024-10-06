@@ -113,70 +113,68 @@ const ManageRecipes = ({ heading, recipeType }) => {
 
     return (
         <>
-            <div className="h-[100vh] overflow-y-auto">
-                <ResponsiveHeader />
-                <div className="pt-14 md:p-0">
-                    <div className="flex flex-col justify-center px-4 md:flex md:flex-row md:justify-between md:items-center">
-                        <RecipeHeading heading={heading} />
-                        <Search onSearch={handleSearch} />
-                    </div>
-                    <div className="grid grid-cols-1 justify-items-center md:grid md:grid-cols-3 md:gap-y-4 sm:grid sm:grid-cols-1">
-                        {Array.isArray(filteredRecipe) && filteredRecipe.map((recipe) => (
-                            <div key={recipe._id}>
-                                <Button onClick={() => handleModalOpen(recipe)}
-                                    sx={{ fontSize: 20, color: '#16cc95f3', margin: 2, borderRadius: 2, padding: 1, minWidth: 300 }}
-                                    className="flex flex-col">
-                                    <div className="flex justify-between items-center w-full">
-                                        {recipe.recipeName}
-                                        <div>
-                                            <EditIcon
-                                                onClick={(e) => { 
-                                                    e.stopPropagation();
-                                                    handleUpdateModalOpen(recipe);
-                                                }}
-                                                className="mx-2 rounded-full hover:bg-gray-300"
-                                                />
-                                            <DeleteIcon
-                                                onClick={(e) => {
-                                                    e.stopPropagation();
-                                                    handleDelete(recipe);
-                                                }}
-                                                className="mx-2 rounded-full hover:bg-gray-300"
-                                            />
-                                        </div>
+            <ResponsiveHeader />
+            <div className="pt-14 md:p-0">
+                <div className="flex flex-col justify-center px-4 md:flex md:flex-row md:justify-between md:items-center">
+                    <RecipeHeading heading={heading} />
+                    <Search onSearch={handleSearch} />
+                </div>
+                <div className="grid grid-cols-1 justify-items-center md:grid md:grid-cols-3 md:gap-y-4 sm:grid sm:grid-cols-1">
+                    {Array.isArray(filteredRecipe) && filteredRecipe.map((recipe) => (
+                        <div key={recipe._id}>
+                            <Button onClick={() => handleModalOpen(recipe)}
+                                sx={{ fontSize: 20, color: '#16cc95f3', margin: 2, borderRadius: 2, padding: 1, minWidth: 300 }}
+                                className="flex flex-col">
+                                <div className="flex justify-between items-center w-full">
+                                    {recipe.recipeName}
+                                    <div>
+                                        <EditIcon
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                handleUpdateModalOpen(recipe);
+                                            }}
+                                            className="mx-2 rounded-full hover:bg-gray-300"
+                                        />
+                                        <DeleteIcon
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                handleDelete(recipe);
+                                            }}
+                                            className="mx-2 rounded-full hover:bg-gray-300"
+                                        />
                                     </div>
-                                    <div className="w-full text-start text-sm mb-2">
-                                        {recipe.createdAt ? format(new Date(recipe.createdAt), 'dd MMMM, yyyy') : 'Date not available'}
-                                    </div>
-                                    <img src={recipe.recipeImage} alt={recipe.recipeName}
-                                        className="h-48 w-full md:h-40" />
-                                </Button>
+                                </div>
+                                <div className="w-full text-start text-sm mb-2">
+                                    {recipe.createdAt ? format(new Date(recipe.createdAt), 'dd MMMM, yyyy') : 'Date not available'}
+                                </div>
+                                <img src={recipe.recipeImage} alt={recipe.recipeName}
+                                    className="h-48 w-full md:h-40" />
+                            </Button>
 
-                                <Modal
-                                    open={modalOpen && selectedRecipe?._id === recipe._id}
-                                    onClose={handleModalClose}
-                                    aria-labelledby="modal-modal-title"
-                                    aria-describedby="modal-modal-description"
-                                >
-                                    <Box sx={style}
-                                        className='md:w-[70%] flex flex-col space-y-4'>
-                                        <h2 className="text-3xl font-semibold text-center">{recipe.recipeName}</h2>
-                                        <div className="">
-                                            <img src={recipe.recipeImage} alt={recipe.recipeName} className="mx-auto h-64 w-64 md:h-[200] md:w-[200]" />
-                                        </div>
-                                        <div className="">
-                                            <h3 className="text-lg font-semibold">Ingredients:</h3>
-                                            <p>{recipe.recipeIngredients}</p>
-                                        </div>
-                                        <div className="">
-                                            <h3 className="text-lg font-semibold">Steps:</h3>
-                                            <p>{recipe.recipeSteps}</p>
-                                        </div>
-                                    </Box>
-                                </Modal>
-                            </div>
-                        ))}
-                    </div>
+                            <Modal
+                                open={modalOpen && selectedRecipe?._id === recipe._id}
+                                onClose={handleModalClose}
+                                aria-labelledby="modal-modal-title"
+                                aria-describedby="modal-modal-description"
+                            >
+                                <Box sx={style}
+                                    className='md:w-[70%] flex flex-col space-y-4'>
+                                    <h2 className="text-3xl font-semibold text-center">{recipe.recipeName}</h2>
+                                    <div className="">
+                                        <img src={recipe.recipeImage} alt={recipe.recipeName} className="mx-auto h-64 w-64 md:h-[200] md:w-[200]" />
+                                    </div>
+                                    <div className="">
+                                        <h3 className="text-lg font-semibold">Ingredients:</h3>
+                                        <p>{recipe.recipeIngredients}</p>
+                                    </div>
+                                    <div className="">
+                                        <h3 className="text-lg font-semibold">Steps:</h3>
+                                        <p>{recipe.recipeSteps}</p>
+                                    </div>
+                                </Box>
+                            </Modal>
+                        </div>
+                    ))}
                 </div>
             </div>
 

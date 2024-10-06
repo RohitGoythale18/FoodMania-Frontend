@@ -12,6 +12,7 @@ import Collapse from '@mui/material/Collapse';
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import ChatIcon from '@mui/icons-material/Chat';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ExpandLess from '@mui/icons-material/ExpandLess';
@@ -21,12 +22,12 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import axios from "axios";
 
-const Feedback = ({heading}) => {
+const Feedback = ({ heading }) => {
     const [expandedItems, setExpandedItems] = useState([]);
     const [message, setMessage] = useState([]);
     const [openSnackbar, setOpenSnackbar] = useState(false);
     const [snackbarMessage, setSnackbarMessage] = useState('');
-    
+
     const handleExpandList = (index) => {
         setExpandedItems((prevState) =>
             prevState.map((item, i) => (i === index ? !item : item))
@@ -98,13 +99,18 @@ const Feedback = ({heading}) => {
                                         <AccountCircleIcon style={{ fontSize: 27 }} />
                                     </ListItemIcon>
                                     <ListItemText primary={message.userName || "Anonymous"} />
-                                    {message.createdAt ? format(new Date(message.createdAt), 'dd MMMM, yyyy HH:mm') : 'Date not available'}
-                                    {expandedItems[index] ? <ExpandLess  sx={{ ml: 2 }} /> : <ExpandMore  sx={{ ml: 2 }} />}
+                                    {expandedItems[index] ? <ExpandLess sx={{ ml: 2 }} /> : <ExpandMore sx={{ ml: 2 }} />}
                                     <DeleteIcon onClick={() => handleDelete(message._id)} sx={{ ml: 2 }} />
                                 </ListItemButton>
                                 <Collapse in={expandedItems[index]} timeout="auto" unmountOnExit>
                                     <List component="div" disablePadding>
                                         <ListItemButton sx={{ pl: 4, display: 'flex', flexDirection: 'column', alignItems: 'start' }}>
+                                            <div className="flex">
+                                                <ListItemIcon sx={{ p: 1 }}>
+                                                    <AccessTimeIcon style={{ fontSize: 23 }} />
+                                                </ListItemIcon>
+                                                {message.createdAt ? format(new Date(message.createdAt), 'dd MMMM, yyyy HH:mm') : 'Date not available'}
+                                            </div>
                                             <div className="flex">
                                                 <ListItemIcon sx={{ p: 1 }}>
                                                     <CallIcon style={{ fontSize: 23 }} />
