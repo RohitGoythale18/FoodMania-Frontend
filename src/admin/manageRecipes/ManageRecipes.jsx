@@ -1,3 +1,4 @@
+import '../../../src/index.css';
 import ResponsiveHeader from "../responsiveHeader/ResponsiveHeader";
 import RecipeHeading from "../adminHeader/RecipeHeading";
 import UpdateRecipe from "../modals/UpdateRecipe";
@@ -114,7 +115,7 @@ const ManageRecipes = ({ heading, recipeType }) => {
     return (
         <>
             <ResponsiveHeader />
-            <div className="pt-14 md:p-0">
+            <div className="h-screen overflow-auto pt-14 md:p-0 custom-scrollbar">
                 <div className="flex flex-col justify-center px-4 md:flex md:flex-row md:justify-between md:items-center">
                     <RecipeHeading heading={heading} />
                     <Search onSearch={handleSearch} />
